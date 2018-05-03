@@ -14,5 +14,5 @@ SCRIPTS_DIR=$(cd $(dirname $(which $0)); pwd)
 echo "Running SITL simulation ..."
 echo SYS_ID=$SYS_ID GCS_HOST=$2 GCS_PORT=$3
 
-docker run --rm -it -v $SCRIPTS_DIR:/external -e "SIM_OPTIONS=--out=udpout:$GCS_HOST:$GCS_PORT -m --target-system=$SYS_ID" --entrypoint "/external/entryPoint.sh" gmyoungbloodparc/ardupilot-sitl $SYS_ID
+docker run --rm -it -v $SCRIPTS_DIR:/external -e "SIM_OPTIONS=--out=udpout:$GCS_HOST:$GCS_PORT --out=udpout:$GCS_HOST:14550 -m --target-system=$SYS_ID" --entrypoint "/external/entryPoint.sh" gmyoungbloodparc/ardupilot-sitl $SYS_ID
 exit $?
