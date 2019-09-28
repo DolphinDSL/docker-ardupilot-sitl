@@ -22,6 +22,17 @@ is shorthand for
     
     runMAV.sh <System id> docker.for.mac.localhost <GCS port>
 
-## `entryPoint.sh`
+## Helper files
+
+### `entryPoint.sh`
 
 The script runs as the entry point for the container at startup (overriding the container's default one), in support of the system id setting by `runMAV.sh`. Thus it is not meant to be called directly, though you may wish to edit it for further customisation.
+
+### `extra-locations.txt`
+
+Add custom locations here. Entries in this file will be added to 
+`ardupilot/Tools/autotest/locations.txt`. 
+
+### `start-location.conf` 
+
+Define the start location for the simulation here.
